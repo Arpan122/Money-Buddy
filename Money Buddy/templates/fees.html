@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Fees
+{% endblock %}
+
+{% block body %}
+    <form action="/fees" method="post">
+        <div class="mb-3">
+            <h3>Enter in the fees you will pay for your 4 years at college: </h3>
+            <input autocomplete="off" step="0.01" class="form-control mx-auto w-auto" name="fees" placeholder="Enter" type="number">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+{% endblock %}

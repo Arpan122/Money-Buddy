@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Debt
+{% endblock %}
+
+
+{% block body %}
+<form action="/debt" method="post">
+    <div class="mb-3">
+        <h3>Enter the relevant information of your loan: </h3>
+        <h5>(Note) The principle is the amount left to pay after all the scholarships you entered</h5>
+        <input autocomplete="off" autofocus step="0.1" class="form-control mx-auto w-auto" name="interest" placeholder="Interest(%)" type="number" min="0" style="margin-bottom: 10px;">
+        <input autocomplete="off" class="form-control mx-auto w-auto" name="years" placeholder="Loan Term (in Years)" type="number" min="0" style="margin-bottom: 10px;">
+        <h3>{{ outputStr }}</h3>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+</form>
+{% endblock %}

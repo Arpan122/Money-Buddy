@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        
+        <!-- http://getbootstrap.com/docs/5.1/ -->
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+        <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+        
+        <link rel="shortcut icon" href="/static/icon.ico">
+        <style>
+            body {
+                font-family: lora;
+            }
+            table {
+                align-self: auto;
+            }
+            body {
+                background-color: #CFFFFD;
+            }
+
+            #nav{
+            background-color: #3E5880;
+            overflow: hidden;
+            }
+
+            #nav li {
+                list-style-type: none;
+            }
+
+            .as{
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            float: right;
+            }
+
+            .as:hover {
+            background-color: #ddd;
+            color: black;
+            }
+
+            #nav a.active {
+            background-color: #4CAF50;
+            color: white;
+            }
+
+            input {
+                border: 1;
+                outline: 1;
+                color: rgb(21, 66, 231);
+                background-color: rgb(255, 234, 234);
+                box-shadow: rgba(65, 63, 63, 0) 0px 0px 0px 0px, rgba(136, 132, 132, 0) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+                border-radius: 5px;
+                font-size: 15px;
+                line-height: 21px;
+                font-weight: 420;
+                padding: 6px 8px;
+                min-height: 30px;
+                vertical-align: middle;
+                transition: background-color .24s,box-shadow .24s;
+                transition-property: background-color, box-shadow;
+                transition-duration: 0.24s, 0.24s;
+                transition-timing-function: ease, ease;
+                transition-delay: 0s, 0s;
+            }
+
+            h1 {
+                font-size: 36px;
+                color: #AA9670;
+                font-weight: 600;
+                margin-left: 50px;
+            }
+            
+            h3 {
+                font-size: 30px;
+                color: #AA9670;
+                margin-left: 50px;
+            }
+
+            h5 {
+                font-size: 15px;
+                color: #AA9670;
+                margin-left: 50px;
+            }
+
+            button {
+                cursor: pointer;
+                margin-left: 50px;
+            }
+
+            #extraList{
+                text-decoration: solid;
+                text-shadow: #ddd;
+                text-decoration-color: crimson;
+            }
+            #extraList a{
+                border: 1px solid #007bff;
+                background: #007bff;
+                padding:10px;
+                color:white;
+                text-decoration: none;
+                border-radius: 6px;
+
+            }
+            #extraList a:hover{
+                background: whitesmoke;
+                color: #007bff;
+            }
+        </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <ul id="nav">
+            <a href="/" ><img src="/static/icon.jpg" alt="Logo" style="width: 120px; height: 51px; float: left;"></a>
+            <li><a class="as" href="/extra">More Info</a></li>
+            <li><a class="as" href="/debt">Debt calculator</a></li>
+            <li><a class="as" href="/">Home</a></li>
+        </ul>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

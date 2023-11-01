@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+
+<head>
+    <link rel="stylesheet" href="/stylesheet.css" type="text/css">
+</head>
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block body %}
+    <h1>You have to pay ${{ fees }} in fees <a href="/fees?edit=true">(Edit)</a></h1>
+    <table class="table table-primary table-striped table-hover" style="margin-left: 50px; width: 1170px;">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name of aid</th>
+                <th scope="col">Amount from aid</th>
+            </tr>
+        </thead>
+        {% for i in range(nameList|count) %}
+        <tr>
+            <td>{{ i + 1 }}</td>
+            <td>{{ nameList[i] }}</td>
+            <td>{{ moneyList[i] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <form action="{{ url_for('add') }}">
+        <button class="btn btn-primary">Add a scholarship or financial aid</button>
+    </form>
+{% endblock %}
